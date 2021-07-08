@@ -11,6 +11,9 @@ RUN apt install -y build-essential cmake gfortran git flex bison \
 RUN apt install -y git-lfs vim-scripts
 
 RUN git clone https://github.com/tribitspub/tribits
+WORKDIR tribits
+RUN git checkout -f 8d696d0bb0
+WORKDIR /
 RUN mkdir tribits/build
 WORKDIR tribits/build
 RUN cmake ..
